@@ -1,0 +1,39 @@
+using System;
+class Frequency
+{
+public static void Main(strings[] args)
+{
+int[] arr = new int[55];
+int[] duplicate = new int[55];
+int i,count,j,n;
+n = Convert.ToInt32(Console.ReadLine());
+for(i = 0;i<n;i++)
+{
+arr[i]= Convert.ToInt32(Console.ReadLine());
+duplicate[i] = -1;
+}
+for(i = 0;i<n;i++)
+{
+count = 1;
+for(j = i+1;j<n;j++)
+{
+if(arr[i]==arr[j])
+{
+count++;
+duplicate[j]=0;
+}
+}
+if(duplicate[i]!=0){
+duplicate[i] = count;
+}
+}
+//Print Frequency 
+for(int i = 0;i<n;i++){
+
+if(duplicate[i]!=0)
+{
+Console.WriteLine(arr[i] +"Frequency - " + duplicate[i]);
+}
+}
+}
+}
